@@ -1,0 +1,29 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/ChandraShekharSaini/video-compressor#readme",
+  "bugs": {
+    "url": "https://github.com/ChandraShekharSaini/video-compressor/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChandraShekharSaini/video-compressor.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --env-file=.env app.js",
+    "build": "npm install",
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "cloudinary": "^2.5.1",
+    "express": "^4.21.2",
+    "multer": "^1.4.5-lts.1",
+    "streamifier": "^0.1.1"
+  }
+}
