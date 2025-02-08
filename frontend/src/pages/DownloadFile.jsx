@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styles from "../Styles/download.module.css"
+import styles from "../styles/download.module.css"
 import { useLocation } from 'react-router-dom';
 
 const DownloadFile = () => {
@@ -27,7 +27,7 @@ const DownloadFile = () => {
       anchor.click(); // Programmatically trigger a click
       document.body.removeChild(anchor); // Clean up
 
-      // Revoke the object URL after use
+      
       URL.revokeObjectURL(url);
     } catch (error) {
       console.error('Error downloading video:', error);
