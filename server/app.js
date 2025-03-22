@@ -1,9 +1,11 @@
-import express from 'express';
+import express, { urlencoded } from 'express';
 import multer from 'multer';
 import { v2 as cloudinary } from 'cloudinary';
 import streamifier from 'streamifier';
 import path from 'path';
 import cors from 'cors'
+import jwt from 'jsonwebtoken'
+import mongoose from 'mongoose';
 
 const app = express();
 const PORT = process.env.PORT || 3600;
@@ -12,7 +14,11 @@ const __dirname = path.resolve()
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors())
+app.use(cors({
+    origin: 'http://localhost:5173',
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+}))
 
 
 cloudinary.config({
@@ -21,7 +27,7 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-const storage = multer.memoryStorage(); 
+const storage = multer.memoryStorage();
 const upload = multer({ storage });
 
 
@@ -31,14 +37,14 @@ app.post('/upload', upload.single('video'), async (req, res) => {
     }
 
     try {
-      
+
         console.log('Uploading and compressing the video...');
         const result = await cloudinary.uploader.upload_stream(
             {
                 resource_type: 'video',
                 folder: 'compressed_videos',
                 transformation: [
-                    { quality: 'auto', fetch_format: 'auto' }
+                    { fetch_format: 'auto', crop: 'limit', bitrate: 800 }
                 ]
             },
             (error, result) => {
@@ -62,21 +68,75 @@ app.post('/upload', upload.single('video'), async (req, res) => {
     }
 });
 
+import GoogleAuthPassport from "./authentication/GoogleAuthPassport.js"
+
+app.use(GoogleAuthPassport.initialize())
+
+app.get('/auth/google',
+    GoogleAuthPassport.authenticate('google', { scope: ['profile', 'email'] }));
+
+app.get('/auth/google/callback',
+    GoogleAuthPassport.authenticate('google', { failureRedirect: 'http://localhost:5173/account-create/sign-in', session: false }),
+    function (req, res) {
+
+        const token = jwt.sign({ user: req.user }, process.env.JWT_SECRET, { expiresIn: '1h' })
+
+        res.redirect(`http://localhost:5173?token=${encodeURIComponent(JSON.stringify(token))}`)
+    });
+
+
+import GithubAuthPassport from "./authentication/GithubAuthPassport.js"
+app.use(GithubAuthPassport.initialize())
+
+app.get('/auth/github',
+    GithubAuthPassport.authenticate('github', { scope: ['user:email'] }));
+
+app.get('/auth/github/callback',
+    GithubAuthPassport.authenticate('github', { failureRedirect: 'http://localhost:5173/account-create/sign-in', session: false }),
+    function (req, res) {
+        const token = jwt.sign({ user: req.user }, process.env.JWT_SECRET, { expiresIn: '1h' })
+
+        res.redirect(`http://localhost:5173?token=${encodeURIComponent(JSON.stringify(token))}`)
+    });
 
 
 
-import userRoutes from "./routes/user.routes.js"
+import authRoutes from "./routes/auth.router.js"
 
-app.use("", userRoutes)
+app.use("/api/auth", authRoutes)
 
-app.use(express.static(path.join(__dirname, "/frontend/dist")))
-app.get("*", (req, res) => {
-    res.sendFile(parh.resolve(__dirname, "frontend", "dist", "index.html"))
+
+app.use((err , req , res , next)=>{
+    const statusCode = err.statusCode || 500
+    const message = err.message || "Internal Server Error"
+
+    res.status(statusCode).json({
+        success: false,
+        message,
+        statusCode
+    })
 })
 
 
-
-// Start the server
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
+
+    mongoose.connect(process.env.MONGO_URI).then(() => {
+        console.log("Connected to MongoDB")
+    })
+        .catch((error) => {
+            console.log("Error connecting to MongoDB")
+            console.log(error)
+        })
+
+
 });
+
+
+
+
+
+
+
+
+

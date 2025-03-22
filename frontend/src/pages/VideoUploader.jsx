@@ -2,130 +2,76 @@ import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { useDropzone } from 'react-dropzone';
-import DownloadFile from './DownloadFile';
-import styles from "../styles/videouploader.module.css"
 import { IoCloudUploadOutline } from "react-icons/io5";
 
-
 const VideoUpload = () => {
-    const navigate = useNavigate();
+
+
 
     const [videoFile, setVideoFile] = useState(null);
     const [uploading, setUploading] = useState(false);
-    const [responseMessage, setResponseMessage] = useState('');
-    const [compressedVideoUrl, setCompressedVideoUrl] = useState('');
+    const [responseMessage, setResponseMessage] = useState("");
+    const [compressedVideoUrl, setCompressedVideoUrl] = useState("");
 
-    // Handle the drop of the file
     const onDrop = (acceptedFiles) => {
         const file = acceptedFiles[0];
-        if (file && file.type.startsWith('video/')) {
+        if (file && file.type.startsWith("video/")) {
             setVideoFile(file);
         } else {
-            alert('Please upload a valid video file.');
+            alert("Please upload a valid video file.");
         }
     };
 
-    // Initialize react-dropzone with configuration
     const { getRootProps, getInputProps } = useDropzone({
         onDrop,
-        accept: { 'video/*': [] }, // Accept video files only
+        accept: { "video/*": [] },
     });
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-
-        if (!videoFile) {
-            alert('Please select a video to upload.');
-            return;
-        }
-
-        const formData = new FormData();
-        formData.append('video', videoFile);
-
-        setUploading(true);
-
-        try {
-            const response = await axios.post('https://video-compressor-yt94.onrender.com/upload', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data',
-                },
-                onUploadProgress: (progressEvent) => {
-                    const percentCompleted = Math.round(
-                        (progressEvent.loaded * 100) / progressEvent.total
-                    );
-                    console.log(`Uploading: ${percentCompleted}%`);
-                    setResponseMessage(`Uploading: ${percentCompleted}%`);
-                },
-
-                
-            });
-            console.log(response);
-            setResponseMessage(response.data.message);
-            setCompressedVideoUrl(response.data.compressedVideoUrl);
-
-             navigate("/download-video", { state: { compressedVideoUrl: response.data.compressedVideoUrl } });
-
-        } catch (error) {
-            setResponseMessage('Failed to upload the video.');
-            console.log(error)
-        } finally {
-            setUploading(false);
-        }
-    };
 
 
     return (
-        <>
+        <section className="flex justify-center items-center pt-6 w-full h-screen ">
+            <div className=" w-[80%] border-[1px]   m-auto rounded-lg  bg-gray-100 flex flex-col text-center gap-5 p-5 ">
+                <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-black font-sans">Compression Tool</h2>
 
-            <section className={styles.uploadArea}>
-                <div className={styles.uploadHeading}>
-                    <h2>Compression Tool</h2>
-                </div>
+                <div className="text-[#808080]  sm:text-lg  md:text-xl lg:text-2xl font-mono tracking-tighter">Quickly and easily compress large video files for smoother streaming,<br></br>
+                    faster downloads, and storage</div>
 
-                <div className={styles.uploadParagraph}>
-                    Quickly and easily compress large video files for smoother streaming,<br></br>faster downloads, and storage
-                </div>
 
-                {/* Drag and drop featute start */}
-                <form onSubmit={handleSubmit}>
+                <form className="flex flex-col justify-center items-center ">
                     <div
                         {...getRootProps()}
-                        className={styles.uploadVideoArea}
-
+                        className="border-2 border-dashed border-blue-500 p-10 w-full sm:w-[90%] md:w-[80%] lg:w-[50%] flex flex-col justify-center items-center rounded-md  cursor-pointer"
                     >
-                        <div className={styles.uploudIcon} >
+                        <div className=" text-[65px] sm:text-[100px] text-gray-500 mt-3 sm:mt-5">
                             <IoCloudUploadOutline />
                         </div>
-                        <input {...getInputProps()} />
-
+                        <input {...getInputProps()}  className="hidden " />
                         <button
-                            className={styles.uploadBtn}
-
                             type="button"
+                            className="mt-7 text-white px-8 sm:px-16 py-3 border-2 border-blue-500 bg-blue-500 rounded-full   font-semibold hover:bg-white hover:text-blue-500 transition duration-300"
                             onClick={(e) => {
-                                e.stopPropagation(); // Prevent triggering the drop zone on click
-                                document.querySelector('input[type="file"]').click(); // Open file dialog
+                                e.stopPropagation();
+                                document.querySelector('input[type="file"]').click();
                             }}
-
                         >
                             Upload File
                         </button>
-                        <p>or drop your file here</p>
+                        <p className="mt-9 sm:mt-8 md:mt-6 lg:mt-5 text-lg text-gray-500">or drop your file here</p>
                     </div>
-                    <button className={styles.submitBtn} type="submit" disabled={uploading}>
-                        {uploading ? 'Uploading...' : 'Upload Video'}
+                    <button
+                        type="submit"
+                        className="bg-blue-500 text-white px-6 py-3 mt-5 rounded-full font-semibold hover:bg-blue-600 transition duration-300"
+                    >
+                        Upload Video
                     </button>
                 </form>
 
-                {/* Drag and drop featute start */}
-
-                {uploading && <p>{responseMessage}</p>}
 
 
-            </section>
+            </div>
+        </section>
 
-
-        </>
     );
 };
 

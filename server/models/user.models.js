@@ -1,11 +1,47 @@
 import mongoose, { Schema } from "mongoose"
 
 const userSchema = Schema({
-    name: String,
-    email: String,
-    password: String,
-})
+
+    firstName: {
+        type: String,
+        required: true,
+    },
+
+    lastName: {
+        type: String,
+        
+    },
+
+    username: {
+        type: String,
+        required: true,
+        unique: true,
+    },
+
+    email: {
+        type: String,
+        required: true,
+        unique: true,
+    },
+    password: {
+        type:String,
+        required: true,
+        unique: true,
+    },
+
+    profilePicture: {
+        googleImageUrl: {
+            type: String,
+        },
+
+        defaultImageUrl: {
+            type: String,
+            default: "https://cdn-icons-png.flaticon.com/256/622/622851.png",
+
+        }
+    }
+}, { timestamps: true })
 
 
 const User = mongoose.model("user", userSchema)
-export default userSchema
+export default User
