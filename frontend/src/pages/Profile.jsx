@@ -61,7 +61,7 @@ export default function FormPropsTextFields() {
 
         try {
             dispatch(signOutUserStart())
-            const response = await fetch(`http://localhost:3600/api/auth/sign-out/${currentUser._id}`,
+            const response = await fetch(`https://vimtrim.onrender.com/api/auth/sign-out/${currentUser._id}`,
                 {
                     method: 'GET',
                     headers: {
@@ -97,7 +97,7 @@ export default function FormPropsTextFields() {
 
         try {
             dispatch(deleteUserStart())
-            const response = await fetch(`http://localhost:3600/api/auth/delete-user/${currentUser._id}`,
+            const response = await fetch(`https://vimtrim.onrender.com/api/auth/delete-user/${currentUser._id}`,
                 {
                     method: 'DELETE',
                     headers: {
@@ -143,7 +143,7 @@ export default function FormPropsTextFields() {
 
         try {
             dispatch(updateUserStart())
-            const response = await fetch(`http://localhost:3600/api/auth/update-user/${currentUser._id}`,
+            const response = await fetch(`https://vimtrim.onrender.com/api/auth/update-user/${currentUser._id}`,
                 {
                     method: 'PUT',
                     body: JSON.stringify(formData),

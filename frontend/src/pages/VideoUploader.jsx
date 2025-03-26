@@ -54,7 +54,7 @@ const VideoUpload = () => {
         try {
 
             console.log("Uploading video...")
-            const response = await axios.post(`http://localhost:3600/upload?id=${currentUser?._id}`, formData, {
+            const response = await axios.post(`https://vimtrim.onrender.com/upload?id=${currentUser?._id}`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },

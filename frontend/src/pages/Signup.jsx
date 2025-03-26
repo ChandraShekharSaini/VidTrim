@@ -23,7 +23,7 @@ const Signup = () => {
         e.preventDefault()
 
         try {
-            const response = await fetch("http://localhost:3600/api/auth/sign-up", {
+            const response = await fetch("https://vimtrim.onrender.com/api/auth/sign-up", {
                 headers: {
                     "Content-Type": "application/json"
                 },

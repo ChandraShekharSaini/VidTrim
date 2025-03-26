@@ -29,7 +29,7 @@ const Dasbord = () => {
 
       try {
 
-        const response = await fetch(`http://localhost:3600/api/compressed-video/video-history/${currentUser._id}`, {
+        const response = await fetch(`https://vimtrim.onrender.com/api/compressed-video/video-history/${currentUser._id}`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -66,7 +66,7 @@ const Dasbord = () => {
 
     try {
 
-      const response = await fetch(`http://localhost:3600/api/compressed-video/delte-video/${id}`, {
+      const response = await fetch(`https://vimtrim.onrender.com/api/compressed-video/delte-video/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

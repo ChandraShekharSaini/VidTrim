@@ -2,16 +2,14 @@
 const userAuth = () => {
 
     const GoogleAuthButton = () => {
-        window.location.href = 'http://localhost:3600/auth/google'
+        window.location.href = 'https://vimtrim.onrender.com/auth/google'
     }
 
 
     const GithubAuthButton = () => {
-        window.location.href = 'http://localhost:3600/auth/github'
+        window.location.href = 'https://vimtrim.onrender.com/auth/github'
     }
 
-
-    
 
     return { GoogleAuthButton, GithubAuthButton }
 }

@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(cookieParser());
 app.use(cors({
-    origin: ['http://localhost:5173', ''],
+    origin: ['https://vimtrim.onrender.com'],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
 }))
@@ -101,12 +101,12 @@ app.get('/auth/google',
     GoogleAuthPassport.authenticate('google', { scope: ['profile', 'email'] }));
 
 app.get('/auth/google/callback',
-    GoogleAuthPassport.authenticate('google', { failureRedirect: 'http://localhost:5173/account-create/sign-in', session: false }),
+    GoogleAuthPassport.authenticate('google', { failureRedirect: 'https://vimtrim.onrender.com/account-create/sign-in', session: false }),
     function (req, res) {
 
         const token = jwt.sign({ user: req.user }, process.env.JWT_SECRET, { expiresIn: '1h' })
 
-        res.redirect(`http://localhost:5173?token=${encodeURIComponent(JSON.stringify(token))}`)
+        res.redirect(`https://vimtrim.onrender.com?token=${encodeURIComponent(JSON.stringify(token))}`)
     });
 
 
@@ -117,11 +117,11 @@ app.get('/auth/github',
     GithubAuthPassport.authenticate('github', { scope: ['user:email'] }));
 
 app.get('/auth/github/callback',
-    GithubAuthPassport.authenticate('github', { failureRedirect: 'http://localhost:5173/account-create/sign-in', session: false }),
+    GithubAuthPassport.authenticate('github', { failureRedirect: 'https://vimtrim.onrender.com/account-create/sign-in', session: false }),
     function (req, res) {
         const token = jwt.sign({ user: req.user }, process.env.JWT_SECRET, { expiresIn: '1h' })
 
-        res.redirect(`http://localhost:5173?token=${encodeURIComponent(JSON.stringify(token))}`)
+        res.redirect(`https://vimtrim.onrender.com?token=${encodeURIComponent(JSON.stringify(token))}`)
     });
 
 
@@ -144,10 +144,9 @@ app.use((err, req, res, next) => {
     })
 })
 
-app.use(express.static(path.join(__dirname, 'frontend', 'dist')))
-
+app.use(express.static(path.join(__dirname, "/frontend/dist")))
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'frontend', 'dist', 'index.html'))
+    res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"))
 })
 
 

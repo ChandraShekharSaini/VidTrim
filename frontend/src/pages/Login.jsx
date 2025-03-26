@@ -29,7 +29,7 @@ const Login = () => {
 
         try {
             dispatch(signInStart())
-            const response = await fetch("http://localhost:3600/api/auth/sign-in", {
+            const response = await fetch("https://vimtrim.onrender.com/api/auth/sign-in", {
                 headers: {
                     "Content-Type": "application/json",
 
