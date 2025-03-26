@@ -1,7 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 const HomeCompo1 = () => {
+    const { currentUser } = useSelector((state) => state.user)
+
     return (
         <section className='w-full  bg-black   sm:p-16 md:p-24 p-9 pt-20 pb-20    md:pl-10 md:pr-10  lg:pl-20 lg:pr-20  flex flex-col lg:flex-row items-center justify-between gap-7 lg:gap-0 '>
             <div className='text-center lg:text-left   lg:pt-12 lg:pl-10 w-full  md:w-[90%] lg:w-[70%] '>
@@ -9,44 +12,78 @@ const HomeCompo1 = () => {
 
 
                 <span className=' border-gray-600 mt-5 inline-block rounded-md p-1'>
-                    <Link to="/create-account/sign-up">
-                        <button className='font-mono text-[18px] font-semibold flex items-center justify-center gap-3  bg-[#ffffff] px-7 py-3 rounded-md group '
-                            onMouseEnter={(e) => {
-                                const video = e.currentTarget.querySelector("video");
-                                video.currentTime = 0;
-                                video.play();
-                            }}
-                            onMouseLeave={(e) => {
-                                const video = e.currentTarget.querySelector("video");
-                                video.pause();
-                                video.currentTime = 0;
-                            }}
-                        >
-                            <video
+                    {
+                        currentUser ? (
 
-                                playsInline
-                                muted
-                                loop
+                            <Link to="/video-upload">
+                                <button className='font-mono text-[18px] font-semibold flex items-center justify-center gap-3  bg-[#ffffff] px-7 py-3 rounded-md group '
+                                    onMouseEnter={(e) => {
+                                        const video = e.currentTarget.querySelector("video");
+                                        video.currentTime = 0;
+                                        video.play();
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        const video = e.currentTarget.querySelector("video");
+                                        video.pause();
+                                        video.currentTime = 0;
+                                    }}
+                                >
+                                    <video
 
-                                className='w-8 h-8  group-hover:opacity-100 transition-opacity duration-300'
-                            >
+                                        playsInline
+                                        muted
+                                        loop
 
-                                <source src="/logo-white.mp4" type="video/mp4" />
+                                        className='w-8 h-8  group-hover:opacity-100 transition-opacity duration-300'
+                                    >
 
-                            </video>
+                                        <source src="/logo-white.mp4" type="video/mp4" />
 
-                            Try For Free</button>
-                    </Link>
+                                    </video>
+
+                                    Try For Free</button>
+                            </Link>
+                        ) : (
+                            <Link to="/create-account/sign-up">
+                                <button className='font-mono text-[18px] font-semibold flex items-center justify-center gap-3  bg-[#ffffff] px-7 py-3 rounded-md group '
+                                    onMouseEnter={(e) => {
+                                        const video = e.currentTarget.querySelector("video");
+                                        video.currentTime = 0;
+                                        video.play();
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        const video = e.currentTarget.querySelector("video");
+                                        video.pause();
+                                        video.currentTime = 0;
+                                    }}
+                                >
+                                    <video
+
+                                        playsInline
+                                        muted
+                                        loop
+
+                                        className='w-8 h-8  group-hover:opacity-100 transition-opacity duration-300'
+                                    >
+
+                                        <source src="/logo-white.mp4" type="video/mp4" />
+
+                                    </video>
+
+                                    Try For Free</button>
+                            </Link>
+                        )
+                    }
                 </span>
 
-            </div>
+            </div >
 
 
 
             <div className=' flex justify-center  items-center w-[80%]   md:w-[50%] lg:w-[30%] h-[90%]'>
                 <img className=' w-[50%] sm:w-[80%] lg:w-[90%]' src="/logo-dark.avif" alt="" />
             </div>
-        </section>
+        </section >
     )
 }
 

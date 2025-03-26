@@ -31,8 +31,10 @@ const Login = () => {
             dispatch(signInStart())
             const response = await fetch("http://localhost:3600/api/auth/sign-in", {
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+
                 },
+                credentials: "include",
                 method: "POST",
                 body: JSON.stringify(formData)
             })
@@ -44,7 +46,7 @@ const Login = () => {
             if (data.success === false) {
                 dispatch(signInFailure(data.message))
             }
- 
+
 
             dispatch(signInSuccess(data.user))
 

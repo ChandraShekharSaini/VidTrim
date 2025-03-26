@@ -1,7 +1,6 @@
 import React from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import Navbar from '../components/Navbar';
-import styles from "../styles/home.module.css"
 import LogoCarousel from '../components/LogoCarousel';
 import HomeCompo1 from '../components/HomeCompo1';
 import HomeCompo2 from '../components/HomeCompo2';
@@ -13,8 +12,9 @@ import { useSelector } from 'react-redux';
 const Home = () => {
     const navigate = useNavigate();
     const { currentUser } = useSelector((state) => state.user)
-    
-     
+
+ 
+
 
     return (
         <>
@@ -33,23 +33,49 @@ const Home = () => {
                     </div>
 
                     <div className='flex flex-col sm:flex-row justify-center gap-3 sm:gap-5 mt-6 sm:mt-8 md:mt-10 w-full sm:w-auto'>
-                        <Link to='/create-account/sign-in' className='w-full sm:w-auto'>
-                            <div className='shadow-[0_0_0_0.5px_#ffffff] border-gray-600 p-1 rounded-lg'>
-                                <button className='flex justify-center items-center gap-2 py-3 sm:py-4 px-3 sm:px-4 w-full bg-white rounded-lg font-semibold font-mono text-sm sm:text-base'>
-                                    <img src="/penguin.avif" className='w-6 h-6 sm:w-8 sm:h-8' />
-                                    Compress a Video
-                                </button>
-                            </div>
-                        </Link>
+                        {
+                            currentUser ? (
 
-                        <Link to='/create-account/sign-up' className='w-full sm:w-auto'>
-                            <div className='shadow-[0_0_0_0.5px_#ffffff] p-1 rounded-lg'>
-                                <button className='py-3 sm:py-4 px-3 sm:px-4 w-full bg-black text-white rounded-lg font-semibold font-mono text-sm sm:text-base'>
-                                    SIGN UP
-                                </button>
-                            </div>
-                        </Link>
-                    </div>
+                                <>
+                                    <Link to='/video-upload' className='w-full sm:w-auto'>
+                                        <div className='shadow-[0_0_0_0.5px_#ffffff] border-gray-600 p-1 rounded-lg'>
+                                            <button className='flex justify-center items-center gap-2 py-3 sm:py-4 px-3 sm:px-4 w-full bg-white rounded-lg font-semibold font-mono text-sm sm:text-base'>
+                                                <img src="/penguin.avif" className='w-6 h-6 sm:w-8 sm:h-8' />
+                                                Compress a Video
+                                            </button>
+                                        </div>
+                                    </Link>
+
+                                    <Link to='' className='w-full sm:w-auto'>
+                                        <div className='shadow-[0_0_0_0.5px_#ffffff] p-1 rounded-lg'>
+                                            <button className='py-3 sm:py-4 px-3 sm:px-4 w-full bg-black text-white rounded-lg font-semibold font-mono text-sm sm:text-base'>
+                                                Premium Plan
+                                            </button>
+                                        </div>
+                                    </Link>
+                                </>
+                            ) : (
+                                <>
+                                    <Link to='/create-account/sign-in' className='w-full sm:w-auto'>
+                                        <div className='shadow-[0_0_0_0.5px_#ffffff] border-gray-600 p-1 rounded-lg'>
+                                            <button className='flex justify-center items-center gap-2 py-3 sm:py-4 px-3 sm:px-4 w-full bg-white rounded-lg font-semibold font-mono text-sm sm:text-base'>
+                                                <img src="/penguin.avif" className='w-6 h-6 sm:w-8 sm:h-8' />
+                                                Compress a Video
+                                            </button>
+                                        </div>
+                                    </Link>
+
+                                    <Link to='/create-account/sign-up' className='w-full sm:w-auto'>
+                                        <div className='shadow-[0_0_0_0.5px_#ffffff] p-1 rounded-lg'>
+                                            <button className='py-3 sm:py-4 px-3 sm:px-4 w-full bg-black text-white rounded-lg font-semibold font-mono text-sm sm:text-base'>
+                                                SIGN UP
+                                            </button>
+                                        </div>
+                                    </Link>
+                                </>
+                            )
+                        }
+                    </div >
 
                     <div className='w-full mt-6 sm:mt-8 md:mt-10 px-2 sm:px-4 md:px-6 lg:px-8'>
                         <video
@@ -66,14 +92,14 @@ const Home = () => {
                             Your browser does not support the video tag.
                         </video>
                     </div>
-                </div>
-            </section>
+                </div >
+            </section >
 
             <HomeCompo1 />
             <HomeCompo2 />
             <HomeCompo3 />
             <HomeCompo4 />
-             <Footer />
+            <Footer />
 
 
 

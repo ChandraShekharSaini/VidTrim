@@ -10,7 +10,8 @@ export default {
       fontFamily: {
         'Montserrat': ['Montserrat', 'sans-serif'],
         'Boldonse':['Boldonse','sans-serif'],
-        'Oswald':['Oswald','sans-serif']
+        'Oswald':['Oswald','sans-serif'],
+        'Karma':['Karma','sans-serif'],
       },
 
       colors: {

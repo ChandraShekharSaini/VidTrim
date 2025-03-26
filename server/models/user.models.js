@@ -38,6 +38,10 @@ const userSchema = Schema({
             type: String,
             default: "https://cdn-icons-png.flaticon.com/256/622/622851.png",
 
+        },
+
+        githubImageUrl: {
+            type: String,
         }
     }
 }, { timestamps: true })

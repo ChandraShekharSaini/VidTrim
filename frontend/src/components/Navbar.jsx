@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react';
-import styles from '../compostyles/navbar.module.css'
 import { FaList } from "react-icons/fa6";
 import logoVideo from '../assets/logo-black.mp4'
+import { useSelector } from 'react-redux';
 
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
-
+    const { currentUser } = useSelector((state) => state.user)
+      console.log(currentUser)
     useEffect(() => {
         const getScrollThreshold = () => {
             const width = window.innerWidth;
@@ -97,9 +98,6 @@ const Navbar = () => {
 
 
 
-
-
-
     return (
 
         <nav className={`text-white w-[95%] mx-auto pr-3 sm:pr-0 flex justify-between rounded-2xl fixed top-4 left-0 right-0 z-10 mt-4 transition duration-500 backdrop-blur-sm ${isScrolled
@@ -107,7 +105,7 @@ const Navbar = () => {
             : 'bg-black'
             }`}>
 
-            <div className='sm:w-[50%] lg:w-[30%]  rounded-full flex  items-center justify-start gap-4 pl-4 '>
+            <div className=' sm:w-[50%] lg:w-[30%]  rounded-full flex  items-center justify-start gap-4 pl-4 '>
                 {/* <img className='w-12  h-12' src="/logoVideo.webp" /> */}
 
                 <video
@@ -123,7 +121,7 @@ const Navbar = () => {
 
             </div>
 
-            <div className={`font-semibold font-mono  lg:w-[60%] hidden lg:flex items-center  gap-10 ${isScrolled
+            <div className={` font-semibold font-mono  lg:w-[60%] hidden lg:flex items-center  gap-10 ${isScrolled
                 ? 'text-black'
                 : 'text-[#cecece]'
                 }`}>
@@ -144,30 +142,38 @@ const Navbar = () => {
 
             </div>
 
-            <div className=' font-mono sm:w-[50%] lg:w-[25%] flex items-center justify-center gap-2 sm:gap-5'>
+            <div className='font-mono w-[30%] sm:w-[50%] lg:w-[25%] flex items-center justify-around md:justify-center gap-2 sm:gap-5'>
+
+                {currentUser ? (<Link to='/user/profile'>
+                    <img src={currentUser.profilePicture.defaultImageUrl || currentUser.profilePicture?.googleImageUrl} className='w-10 h-10 sm:w-12 sm:h-12  rounded-full object-cover  hover:scale-110  transition duration-500' />
+                </Link>) : (
+                    <>
+                        <Link to="/create-account/sign-in" >
+                            <button className={`min-mobile:hidden  max-mobile:block   px-2  sm:px-4 py-2 border-[1px] border-gray-500 rounded-md transition duration-500 ${isScrolled ? 'text-black hover:shadow-md shadow-black' : 'hover:border-gray-400 hover:shadow-md '}`} >
+                                SIGN IN
+                            </button>
+                        </Link>
+
+                        <Link to="/create-account/sign-up" >
+                            <button className={`hidden md:block px-4 py-2 rounded-md  transition duration-500 ${isScrolled ? 'bg-black text-white hover:bg-orange-500' : ' bg-white text-black hover:bg-[#cdcdcd]'}`}>
+                                SIGN UP
+                            </button>
+                        </Link>
+                    </>
+                )}
 
 
-                <Link to="/create-account/sign-in" >
-                    <button className={`min-mobile:hidden  max-mobile:block   px-2  sm:px-4 py-2 border-[1px] border-gray-500 rounded-md transition duration-500 ${isScrolled ? 'text-black hover:shadow-md shadow-black' : 'hover:border-gray-400 hover:shadow-md '}`} >
-                        SIGN IN
-                    </button>
-                </Link>
 
-                <Link to="/create-account/sign-up" >
-                    <button className={`hidden md:block px-4 py-2 rounded-md  transition duration-500 ${isScrolled ? 'bg-black text-white hover:bg-orange-500' : ' bg-white text-black hover:bg-[#cdcdcd]'}`}>
-                        SIGN UP
-                    </button>
-                </Link>
+
+                {!currentUser &&
+                    <Link to="/" className='md:hidden text-lg' >
+                        <FaList className={`text-2xl ${isScrolled ? 'text-black' : 'text-white'}`} />
+                    </Link>
+                }
 
 
 
-                <Link to="/" className='md:hidden' >
-
-                    <FaList className={`text-2xl ${isScrolled ? 'text-black' : 'text-white'}`} />
-
-                </Link>
-
-            </div>
+            </div >
 
 
         </nav >
