@@ -144,23 +144,33 @@ app.use((err, req, res, next) => {
     })
 })
 
-// app.use(express.static(path.join(__dirname, 'frontend', 'dist')))
+app.use(express.static(path.join(__dirname, 'frontend', 'dist')))
 
-// app.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'frontend', 'dist', 'index.html'))
-// })
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'frontend', 'dist', 'index.html'))
+})
 
 
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
 
-    mongoose.connect(process.env.MONGO_URI).then(() => {
-        console.log("Connected to MongoDB")
-    })
-        .catch((error) => {
-            console.log("Error connecting to MongoDB")
-            console.log(error)
+    // mongoose.connect(process.env.MONGO_URI).then(() => {
+    //     console.log("Connected to MongoDB")
+    // })
+    //     .catch((error) => {
+    //         console.log("Error connecting to MongoDB")
+    //         console.log(error)
+    //     })
+
+
+
+        mongoose.connect(process.env.MONGODB_STRING).then(() => {
+            console.log("Connected to MongoDB")
         })
+            .catch((error) => {
+                console.log("Error connecting to MongoDB")
+                console.log(error)
+            })
 
 
 });
