@@ -12,7 +12,7 @@ const ErrorPage = () => {
         <section className="bg-[url('/errorBackground.svg')]  sm:px-3 flex flex-col items-center gap-7 justify-center  bg-cover bg-center h-screen w-full bg-[#2a222b]"
         >
             <div className=' flex justify-center  rounded-lg'>
-                <img src="https://webartdevelopers.com/blog/wp-content/uploads/2021/05/404-error-page-svg-animation.gif" className=' w-[90%]   sm:w-full    bg-transparent border-[1px] rounded-xl' />
+                <img src="404Animation.gif" className=' w-[90%]   sm:w-full    bg-transparent border-[1px] rounded-xl' />
             </div>
 
 
