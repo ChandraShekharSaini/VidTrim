@@ -12,8 +12,6 @@ passport.use(new GoogleStrategy({
 
     async function (accessToken, refreshToken, profile, done) {
      
-
-
         const generatedUsername = generateRandomName()
         const generatedPassword = generateRandomPassword()
 

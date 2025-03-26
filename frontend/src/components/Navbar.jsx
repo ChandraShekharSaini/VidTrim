@@ -80,16 +80,16 @@ const Navbar = () => {
             }
         };
 
-        // Initial check
+       
         handleScroll();
 
-        // Add scroll event listener
+    
         window.addEventListener('scroll', handleScroll);
 
-        // Add resize event listener to update threshold when screen size changes
+   
         window.addEventListener('resize', handleScroll);
 
-        // Cleanup event listeners on component unmount
+        
         return () => {
             window.removeEventListener('scroll', handleScroll);
             window.removeEventListener('resize', handleScroll);

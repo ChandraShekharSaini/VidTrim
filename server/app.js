@@ -7,6 +7,8 @@ import cors from 'cors'
 import cookieParser from 'cookie-parser'
 import jwt from 'jsonwebtoken'
 import mongoose from 'mongoose';
+import helmet from 'helmet';
+import { rateLimit } from 'express-rate-limit';
 
 const app = express();
 const PORT = process.env.PORT || 3600;
@@ -22,6 +24,14 @@ app.use(cors({
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
 }))
+app.use(helmet())
+
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 100,
+})
+
+app.use(limiter)
 
 
 cloudinary.config({
@@ -86,7 +96,6 @@ const saveVideo = async (videoUrl, id) => {
     console.log(videoUrl, id)
     const compressedVideoData = new CompressedVideo({ id, videoUrl })
     await compressedVideoData.save()
-
 
 }
 
@@ -153,24 +162,13 @@ app.get('*', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
 
-    // mongoose.connect(process.env.MONGO_URI).then(() => {
-    //     console.log("Connected to MongoDB")
-    // })
-    //     .catch((error) => {
-    //         console.log("Error connecting to MongoDB")
-    //         console.log(error)
-    //     })
-
-
-
-        mongoose.connect(process.env.MONGODB_STRING).then(() => {
-            console.log("Connected to MongoDB")
+    mongoose.connect(process.env.MONGODB_STRING).then(() => {
+        console.log("Connected to MongoDB")
+    })
+        .catch((error) => {
+            console.log("Error connecting to MongoDB")
+            console.log(error)
         })
-            .catch((error) => {
-                console.log("Error connecting to MongoDB")
-                console.log(error)
-            })
-
 
 });
 

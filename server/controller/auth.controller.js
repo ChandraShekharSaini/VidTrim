@@ -9,7 +9,7 @@ import SignupMailer from "../Nodemailer/SignupMailer.js"
 
 
 export const postSignIn = async (req, res, next) => {
-    console.log("sign in")
+    console.log("Signin Start...")
 
     try {
 
@@ -29,13 +29,13 @@ export const postSignIn = async (req, res, next) => {
         }
 
 
-        const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "1hr" })
+        const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "5h" })
 
 
         const { password: pass, ...rest } = user._doc
 
 
-        res.cookie("access_token", token, { httpOnly: true, maxAge: 60 * 60 * 1000, path: "/" }).status(200).json({
+        res.cookie("access_token", token, { httpOnly: true, maxAge: 5 * 60 * 60 * 1000, path: "/" }).status(200).json({
             message: "User logged in successfully",
             user: rest
         })
@@ -46,7 +46,7 @@ export const postSignIn = async (req, res, next) => {
 }
 
 export const postSignUp = async (req, res, next) => {
-    console.log(",,,,,,,,,")
+    console.log("Signup start....")
     try {
         const { firstName, lastName, email } = req.body
 
@@ -130,6 +130,7 @@ export const deleteUser = async (req, res, next) => {
 
 
 }
+
 
 
 export const updateUser = async (req, res, next) => {

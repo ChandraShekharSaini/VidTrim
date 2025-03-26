@@ -2,16 +2,16 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "homepage": "https://github.com/ChandraShekharSaini/video-compressor#readme",
+  "homepage": "https://github.com/ChandraShekharSaini/VidTrim.git#readme",
   "bugs": {
-    "url": "https://github.com/ChandraShekharSaini/video-compressor/issues"
+    "url": "https://github.com/ChandraShekharSaini/VidTrim.git/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ChandraShekharSaini/video-compressor.git"
+    "url": "git+https://github.com/ChandraShekharSaini/VidTrim.git"
   },
   "license": "ISC",
-  "author": "",
+  "author": "ChandraShekharSaini",
   "type": "module",
   "main": "index.js",
   "scripts": {
@@ -28,6 +28,8 @@
     "cookies": "^0.9.1",
     "cors": "^2.8.5",
     "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.1.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.9.5",
     "multer": "^1.4.5-lts.1",
