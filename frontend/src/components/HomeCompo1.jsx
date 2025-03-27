@@ -80,8 +80,8 @@ const HomeCompo1 = () => {
 
 
 
-            <div className=' flex justify-center  items-center w-[80%]   md:w-[50%] lg:w-[30%] h-[90%]'>
-                <img className=' w-[50%] sm:w-[80%] lg:w-[90%]' src="/logo-dark.avif" alt="" />
+            <div className=' flex justify-center  items-center w-[80%]  mt-3  md:w-[50%] lg:w-[30%] h-[90%]'>
+                <img className=' w-[65%] sm:w-[80%] lg:w-[90%]' src="/logo-dark.avif" alt="" />
             </div>
         </section >
     )

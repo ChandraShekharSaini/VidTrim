@@ -2,7 +2,7 @@ import React from 'react'
 
 const HomeCompo2 = () => {
     return (
-        <section className='bg-black p-1  sm:p-12  w-full '>
+        <section className='bg-black p-2  sm:p-12  w-full '>
      
 
             <div className='bg-[#323232] flex flex-col justify-center items-center  gap-10 sm:gap-14 md:gap-20  px-5 pb-5  rounded-3xl '>

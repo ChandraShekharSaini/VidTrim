@@ -8,7 +8,7 @@ const HomeCompo4 = () => {
 
             <p className='font-light font-Oswald  text-gray-950 tracking-wider text-[18px] sm:text-[23px]'>Try our online video compressor to reduce video file size</p>
 
-            <div className='shadow-lg shadow-gray-400 rounded-lg p-4 sm:p-7'>
+            <div className=' shadow-xl  shadow-gray-400  rounded-md lg:rounded-lg p-3 sm:p-7'>
                 <video className='w-full h-full object-cover' src="/compo4Video.mp4" autoPlay muted loop playsInline />
             </div>
 

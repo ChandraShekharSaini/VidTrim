@@ -129,7 +129,7 @@ const Navbar = () => {
 
             </div>
 
-            <div className={` font-semibold border-[1px] border-white font-mono lg:w-[60%] hidden lg:flex items-center  gap-10 ${isScrolled
+            <div className={` font-semibold  font-mono lg:w-[60%] hidden lg:flex items-center  gap-10 ${isScrolled
                 ? 'text-black'
                 : 'text-[#cecece]'
                 }`}>
