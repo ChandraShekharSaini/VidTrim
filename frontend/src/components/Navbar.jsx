@@ -113,7 +113,7 @@ const Navbar = () => {
             : 'bg-black'
             }`}>
 
-            <div className=' sm:w-[60%] lg:w-[30%]  flex  items-center justify-start gap-4 pl-2 sm:pl-4 '>
+            <div className=' sm:w-[60%] lg:w-[30%]  flex  items-center justify-start gap-2 sm:gap-4 pl-1 sm:pl-4 '>
                 {/* <img className='w-12  h-12' src="/logoVideo.webp" /> */}
 
                 <video
