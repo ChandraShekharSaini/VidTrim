@@ -19,7 +19,7 @@ const HomeCompo2 = () => {
                 <div className='flex flex-col items-center lg:flex-row  justify-center gap-10  lg:gap-5 '>
 
                     <div className='flex flex-col  gap-4  w-[100%]  sm:w-[80%] md:w-[70%] lg:w-[30%] h-[550px] pb-5 rounded-3xl bg-[#454545]'>
-                        <img className='w-full h-[250px] rounded-3xl' src="https://cdn.prod.website-files.com/616e938268c8f0a92cb2b540/6516b6e146ac02b7c59ae0b1_Option%201.png" />
+                        <img className='w-full h-[250px] rounded-3xl' src="/compo2Image1.png" />
 
                         <div className='flex flex-col  gap-16 px-5 '>
                             <div className='text-white leading-8  tracking-tighter  text-[32px] font-sans font-semibold'>
@@ -32,7 +32,7 @@ const HomeCompo2 = () => {
 
 
                     <div className='flex flex-col gap-4  w-[100%] sm:w-[80%] md:w-[70%] lg:w-[30%]  min-h-[550px] pb-5 rounded-3xl bg-[#454545]'>
-                        <img className='w-full h-[250px] rounded-3xl' src="https://cdn.prod.website-files.com/616e938268c8f0a92cb2b540/6201802f1c960d227d383449_how%20to%20compress%20a%20video%20for%20email.001.jpeg" />
+                        <img className='w-full h-[250px] rounded-3xl' src="/compo2Image2.jpeg" />
 
                         <div className='flex flex-col gap-16 px-5'>
                             <div className='text-white leading-8 tracking-tighter  text-[32px] font-sans font-semibold'>
@@ -45,7 +45,7 @@ const HomeCompo2 = () => {
 
 
                     <div className='flex flex-col gap-4  w-[100%] sm:w-[80%] md:w-[70%] lg:w-[30%]  min-h-[550px]  pb-5 rounded-3xl bg-[#454545]'>
-                        <img className='w-full h-[250px] rounded-3xl' src="https://cdn.prod.website-files.com/616e938268c8f0a92cb2b540/649b3e26ba3b36a6e709c350_Greenscreen%20Hero.png" />
+                        <img className='w-full h-[250px] rounded-3xl' src="/compo2Image3.png" />
 
                         <div className='flex flex-col gap-16 px-5 '>
                             <div className='text-white leading-8 tracking-tighter  text-[32px] font-sans font-semibold'>
