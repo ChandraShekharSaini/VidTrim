@@ -61,12 +61,12 @@ const Login = () => {
 
 
     return (
-        <section className='bg-black flex flex-col justify-center  items-center h-screen w-screen pr-1 pl-1 sm:pr-0 sm:pl-0 '>
+        <section className='bg-black flex flex-col justify-center  items-center h-screen w-screen  sm:pr-0 sm:pl-0 '>
 
             <div className='text-[#eeeeee] font-bold text-2xl mb-6'>Sign in</div>
 
 
-            <form onSubmit={handleSignup} className='flex flex-col  gap-4 border-[2px] p-6 sm:p-10 bg-[#191919] w-[450px] max-w-[90%]  max-h-[90%] rounded-lg'>
+            <form onSubmit={handleSignup} className='flex flex-col  gap-4 border-[2px] p-6 md:p-8 sm:p-10 bg-[#191919] w-[450px] max-w-[90%]  max-h-[90%] rounded-lg'>
 
 
                 <p className='text-[#d5d3d3] font-semibold'>Email</p>
