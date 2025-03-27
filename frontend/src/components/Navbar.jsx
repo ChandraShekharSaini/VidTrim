@@ -67,6 +67,14 @@ const Navbar = () => {
                 return 3500;
             }
 
+            else if (width >= 371) { // mobile screens
+                return 3220;
+            }
+
+            else if (width >= 357) { // mobile screens
+                return 3256;
+            }
+
 
         };
 
@@ -100,12 +108,12 @@ const Navbar = () => {
 
     return (
 
-        <nav className={`text-white w-[95%] mx-auto pr-3 sm:pr-0 flex justify-between rounded-2xl fixed top-4 left-0 right-0 z-10 mt-4 transition duration-500 backdrop-blur-sm ${isScrolled
+        <nav className={`text-white w-[95%] p-3 sm:p-0 mx-auto pr-3 sm:pr-0 flex justify-between rounded-2xl fixed top-4 left-0 right-0 z-10 mt-4 transition duration-500 backdrop-blur-sm ${isScrolled
             ? 'bg-white shadow-lg'
             : 'bg-black'
             }`}>
 
-            <div className=' sm:w-[50%] lg:w-[30%]  rounded-full flex  items-center justify-start gap-4 pl-4 '>
+            <div className=' sm:w-[60%] lg:w-[30%]  flex  items-center justify-start gap-4 pl-2 sm:pl-4 '>
                 {/* <img className='w-12  h-12' src="/logoVideo.webp" /> */}
 
                 <video
@@ -116,12 +124,12 @@ const Navbar = () => {
                     playsInline
                     src="/logo-black.mp4"
                 />
-                <p className={`font-mono font-bold text-2xl sm:text-3xl  md:text-4xl border-2 border-gray-500 rounded-sm  px-2 py-1 sm:px-4 sm:py-2 ${isScrolled ? 'text-orange-500' : 'text-white'
+                <p className={`font-mono font-bold text-xl  sm:text-3xl  md:text-4xl border-2 border-gray-500 rounded-sm  px-2 py-1 sm:px-4 sm:py-2 ${isScrolled ? 'text-orange-500' : 'text-white'
                     }`}>VidTrim</p>
 
             </div>
 
-            <div className={` font-semibold font-mono  lg:w-[60%] hidden lg:flex items-center  gap-10 ${isScrolled
+            <div className={` font-semibold border-[1px] border-white font-mono lg:w-[60%] hidden lg:flex items-center  gap-10 ${isScrolled
                 ? 'text-black'
                 : 'text-[#cecece]'
                 }`}>
@@ -142,7 +150,7 @@ const Navbar = () => {
 
             </div>
 
-            <div className='font-mono w-[30%] sm:w-[50%] lg:w-[25%] flex items-center justify-around md:justify-center gap-2 sm:gap-5'>
+            <div className='font-mono w-[40%]   sm:w-[50%] lg:w-[25%] flex items-center justify-around md:justify-center gap-2 sm:gap-5'>
 
                 {currentUser ? (<Link to='/user/profile'>
                     <img src={currentUser.profilePicture.defaultImageUrl || currentUser.profilePicture?.googleImageUrl} className='w-10 h-10 sm:w-12 sm:h-12  rounded-full object-cover  hover:scale-110  transition duration-500' />

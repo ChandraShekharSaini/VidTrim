@@ -8,7 +8,7 @@ const HomeCompo1 = () => {
     return (
         <section className='w-full  bg-black   sm:p-16 md:p-24 p-9 pt-20 pb-20    md:pl-10 md:pr-10  lg:pl-20 lg:pr-20  flex flex-col lg:flex-row items-center justify-between gap-7 lg:gap-0 '>
             <div className='text-center lg:text-left   lg:pt-12 lg:pl-10 w-full  md:w-[90%] lg:w-[70%] '>
-                <h2 className='text-white mt-10  font-serif  text-[50px] sm:text-[45px] md:text-[60px] lg:text-[90px] font-bold bg-gradient-to-b from-[#eeeeee] via-[#d8d8d8] via-30% to-[#b5b5b5] to-70% text-transparent bg-clip-text '>Try VidTrim Now</h2>
+                <h2 className='text-white mt-10  font-serif  text-[40px] sm:text-[45px] md:text-[60px] lg:text-[90px] font-bold bg-gradient-to-b from-[#eeeeee] via-[#d8d8d8] via-30% to-[#b5b5b5] to-70% text-transparent bg-clip-text '>Try  VidTrim Now</h2>
 
 
                 <span className=' border-gray-600 mt-5 inline-block rounded-md p-1'>

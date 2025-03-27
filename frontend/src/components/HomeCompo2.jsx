@@ -2,14 +2,11 @@ import React from 'react'
 
 const HomeCompo2 = () => {
     return (
-        <section className='bg-black p-6  sm:p-12   w-full '>
-            {/* https://cdn.prod.website-files.com/616e938268c8f0a92cb2b540/6516b6e146ac02b7c59ae0b1_Option%201.png
-            https://cdn.prod.website-files.com/616e938268c8f0a…0to%20compress%20a%20video%20for%20email.001.jpeg
-            https://cdn.prod.website-files.com/616e938268c8f0a92cb2b540/649b3e26ba3b36a6e709c350_Greenscreen%20Hero.png */}
-
+        <section className='bg-black p-1  sm:p-12  w-full '>
+     
 
             <div className='bg-[#323232] flex flex-col justify-center items-center  gap-10 sm:gap-14 md:gap-20  px-5 pb-5  rounded-3xl '>
-                <div className='text-white text-[35px] sm:text-[45px] md:text-[55px] lg:text-[60px] mt-10  tracking-tight sm:tracking-tighter font-semibold'>
+                <div className='text-white text-center text-[32px] sm:text-[45px] md:text-[55px] lg:text-[60px] mt-10  tracking-tight sm:tracking-tighter font-semibold'>
                     MORE FROM VidTrim
 
                 </div>
