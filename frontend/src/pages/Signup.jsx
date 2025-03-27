@@ -44,12 +44,12 @@ const Signup = () => {
 
 
     return (
-        <section className='bg-black flex flex-col justify-center  items-center  h-[110vh]   sm:h-[105vh]  w-screen pr-2 pl-2  sm:pr-0 sm:pl-0 '>
+        <section className='bg-black flex flex-col justify-center  items-center  h-[110vh]   sm:h-[105vh]  w-screen pr-1 pl-1  sm:pr-0 sm:pl-0 '>
 
             <div className='text-[#eeeeee] font-bold text-2xl mb-6'>Sign up</div>
 
 
-            <form onSubmit={handleSignup} className='flex flex-col  gap-4 border-[2px] p-12    bg-[#191919] w-[450px] max-w-[90%]  max-h-[90%] rounded-lg'>
+            <form onSubmit={handleSignup} className='flex flex-col  gap-4 border-[2px] p-6  sm:p-12  bg-[#191919] w-[450px] max-w-[90%]  max-h-[90%] rounded-lg'>
 
                 {/* klkjkj */}
 

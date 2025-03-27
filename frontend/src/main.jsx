@@ -5,6 +5,7 @@ import Routes from './routes/Routes'
 import { store, persistor } from './redux/store/store'
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
+import { ErrorBoundary } from "react-error-boundary";
 
 
 createRoot(document.getElementById('root')).render(
