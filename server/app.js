@@ -158,6 +158,7 @@ app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"))
 })
 
+const name12 = "Shekhar"
 
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
