@@ -150,7 +150,7 @@ const Navbar = () => {
 
             </div>
 
-            <div className='font-mono w-[40%]   sm:w-[50%] lg:w-[25%] flex items-center justify-around md:justify-center gap-2 sm:gap-5'>
+            <div className='font-mono w-[40%] sm:w-[50%] lg:w-[25%] flex items-center justify-around md:justify-center gap-2 sm:gap-5'>
 
                 {currentUser ? (<Link to='/user/profile'>
                     <img src={currentUser.profilePicture.defaultImageUrl || currentUser.profilePicture?.googleImageUrl} className='w-10 h-10 sm:w-12 sm:h-12  rounded-full object-cover  hover:scale-110  transition duration-500' />
@@ -171,9 +171,7 @@ const Navbar = () => {
                 )}
 
 
-
-
-                {!currentUser &&
+                {!currentUser && 
                     <Link to="/" className='md:hidden text-lg' >
                         <FaList className={`text-2xl ${isScrolled ? 'text-black' : 'text-white'}`} />
                     </Link>

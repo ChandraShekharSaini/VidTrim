@@ -32,7 +32,7 @@ const Home = () => {
                         Video is the smartest way to reduce video size without compromising quality.
                     </div>
 
-                    <div className='flex flex-col sm:flex-row justify-center gap-3 sm:gap-5 mt-6 sm:mt-8 md:mt-10 w-full sm:w-auto'>
+                    <div className='flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-5 mt-6 sm:mt-8 md:mt-10 w-full sm:w-auto'>
                         {
                             currentUser ? (
 
@@ -48,7 +48,7 @@ const Home = () => {
 
                                     <Link to='' className='w-full sm:w-auto'>
                                         <div className='shadow-[0_0_0_0.5px_#ffffff] p-1 rounded-lg'>
-                                            <button className='py-3 sm:py-4 px-3 sm:px-4 w-full bg-black text-white rounded-lg font-semibold font-mono text-sm sm:text-base'>
+                                            <button className='py-3  sm:py-4 px-3 sm:px-4 w-full bg-black text-white rounded-lg font-semibold font-mono text-sm sm:text-base'>
                                                 Premium Plan
                                             </button>
                                         </div>
@@ -68,8 +68,8 @@ const Home = () => {
                                     <Link to='/create-account/sign-up' className='w-full sm:w-auto'>
                                         <div className='shadow-[0_0_0_0.5px_#ffffff] p-1 rounded-lg'>
                                             <button className='py-3 sm:py-4 px-3 sm:px-4 w-full bg-black text-white rounded-lg font-semibold font-mono text-sm sm:text-base'>
-                                                SIGN UP
-                                            </button>
+                                                SIGN UP 
+                                            </button> 
                                         </div>
                                     </Link>
                                 </>

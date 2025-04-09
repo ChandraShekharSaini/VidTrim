@@ -9,7 +9,7 @@ const userSchema = Schema({
 
     lastName: {
         type: String,
-        
+
     },
 
     username: {
@@ -24,7 +24,7 @@ const userSchema = Schema({
         unique: true,
     },
     password: {
-        type:String,
+        type: String,
         required: true,
         unique: true,
     },
@@ -36,13 +36,14 @@ const userSchema = Schema({
 
         defaultImageUrl: {
             type: String,
-            default: "https://cdn-icons-png.flaticon.com/256/622/622851.png",
+            default: "https://t4.ftcdn.net/jpg/13/52/79/05/360_F_1352790598_0zmu2UfeR328Dw53Zgeu1IJzOTMsL9vI.jpg",
 
         },
 
         githubImageUrl: {
             type: String,
-        }
+        },
+     
     }
 }, { timestamps: true })
 

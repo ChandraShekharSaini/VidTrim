@@ -188,8 +188,8 @@ export default function FormPropsTextFields() {
                                 variant="filled"
                                 sx={{ width: '100%' }}
                             >
-                                Updated user details successfully   
-                                
+                                Updated user details successfully
+
                             </Alert>
                         </Snackbar>
                     </div>
@@ -206,7 +206,8 @@ export default function FormPropsTextFields() {
 
                     <div className='flex flex-col gap-4  p-2 '>
                         <div className='flex flex-row items-center gap-4'>
-                            <img src={currentUser.profilePicture.defaultImageUrl} alt="userImage" className="w-14 h-14 rounded-full" />
+                            <img src={currentUser.profilePicture.defaultImageUrl
+                            } alt="userImage" className="w-14 h-14 rounded-full" />
                             <div className='flex flex-col gap-2'>
                                 <h1 className='text-lg  font-Karma font-medium '>{currentUser.username}</h1>
                             </div>
@@ -472,7 +473,7 @@ export default function FormPropsTextFields() {
                         muted
                         playsInlin
                     >
-                        <source src="https://videos.pexels.com/video-files/5118513/5118513-uhd_1440_2560_25fps.mp4" type="video/mp4" />
+                        <source src="profileVideo.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                 </div>

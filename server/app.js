@@ -112,7 +112,7 @@ app.get('/auth/google',
 app.get('/auth/google/callback',
     GoogleAuthPassport.authenticate('google', { failureRedirect: 'https://vimtrim.onrender.com/account-create/sign-in', session: false }),
     function (req, res) {
-
+        if (!req.user) return res.redirect('https://vimtrim.onrender.com/account-create/sign-in');
         const token = jwt.sign({ user: req.user }, process.env.JWT_SECRET, { expiresIn: '1h' })
 
         res.redirect(`https://vimtrim.onrender.com?token=${encodeURIComponent(JSON.stringify(token))}`)
@@ -128,6 +128,7 @@ app.get('/auth/github',
 app.get('/auth/github/callback',
     GithubAuthPassport.authenticate('github', { failureRedirect: 'https://vimtrim.onrender.com/account-create/sign-in', session: false }),
     function (req, res) {
+        if (!req.user) return res.redirect('https://vimtrim.onrender.com/account-create/sign-in');
         const token = jwt.sign({ user: req.user }, process.env.JWT_SECRET, { expiresIn: '1h' })
 
         res.redirect(`https://vimtrim.onrender.com?token=${encodeURIComponent(JSON.stringify(token))}`)
@@ -154,11 +155,12 @@ app.use((err, req, res, next) => {
 })
 
 app.use(express.static(path.join(__dirname, "/frontend/dist")))
-app.get('*', (req, res) => {
+app.get("*", (_, res) => {
     res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"))
 })
 
-const name12 = "Shekhar"
+
+
 
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
