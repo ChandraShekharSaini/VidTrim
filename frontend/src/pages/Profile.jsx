@@ -300,7 +300,7 @@ export default function FormPropsTextFields() {
 
                     <div className=' grid place-content-center'>
                         <img
-                            src={currentUser.profilePicture.defaultImageUrl}
+                            src={currentUser?.profilePicture?.defaultImageUrl || currentUser?.profilePicture?.googleImageUrl || currentUser?.profilePicture?.githubImageUrl}
                             alt="userImage"
                             className="w-24 h-24 rounded-full"
                         />
@@ -473,7 +473,7 @@ export default function FormPropsTextFields() {
                         muted
                         playsInlin
                     >
-                        <source src="profileVideo.mp4" type="video/mp4" />
+                        <source src="/profileVideo.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                 </div>
