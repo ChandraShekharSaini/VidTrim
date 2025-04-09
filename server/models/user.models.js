@@ -36,7 +36,7 @@ const userSchema = Schema({
 
         defaultImageUrl: {
             type: String,
-            default: "https://t4.ftcdn.net/jpg/13/52/79/05/360_F_1352790598_0zmu2UfeR328Dw53Zgeu1IJzOTMsL9vI.jpg",
+            default: "https://res.cloudinary.com/dddvdibng/image/upload/v1744211382/VidTrim%20Assests/u5sq0eei02gmyifzdik8.jpg",
 
         },
 
