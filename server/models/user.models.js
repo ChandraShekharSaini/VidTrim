@@ -36,7 +36,7 @@ const userSchema = Schema({
 
         defaultImageUrl: {
             type: String,
-            default: "https://res.cloudinary.com/dddvdibng/image/upload/v1744211382/VidTrim%20Assests/u5sq0eei02gmyifzdik8.jpg",
+            default: "https://cdn-icons-png.flaticon.com/512/4918/4918116.png",
 
         },
 

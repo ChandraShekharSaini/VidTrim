@@ -16,7 +16,7 @@ import { useState } from 'react';
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
 
-
+import DefaulImage from "../assets/defaultImage.jpg"
 
 
 
@@ -300,7 +300,7 @@ export default function FormPropsTextFields() {
 
                     <div className=' grid place-content-center'>
                         <img
-                            src={currentUser?.profilePicture?.defaultImageUrl || currentUser?.profilePicture?.googleImageUrl || currentUser?.profilePicture?.githubImageUrl}
+                            src={DefaulImage || currentUser?.profilePicture?.googleImageUrl || currentUser?.profilePicture?.githubImageUrl}
                             alt="userImage"
                             className="w-24 h-24 rounded-full"
                         />
