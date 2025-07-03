@@ -41,11 +41,18 @@
 ## 🚀 Quick Start
 
 ### 📋 Prerequisites
-- Node.js ≥16
-- MongoDB (Local or Atlas)
-- FFmpeg (for server-side processing)
-- Google OAuth Client ID
-- GitHub OAuth Secret Key
+
+Before running this project locally, ensure you have the following installed:
+
+- [Node.js](https://nodejs.org/) ≥ 16
+- [MongoDB](https://www.mongodb.com/) (Local or Atlas)
+- [FFmpeg](https://ffmpeg.org/) – for server-side video processing
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/) – for dependency management
+- [Git](https://git-scm.com/) – to clone the repository
+- [Postman](https://www.postman.com/) – for testing APIs (optional but useful)
+- A modern browser (Chrome, Firefox, etc.)
+
+
 
 ### ⚡ Installation
 ```bash
