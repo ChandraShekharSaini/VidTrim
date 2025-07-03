@@ -5,6 +5,13 @@
 
 ---
 
+## 📄 Project Report
+
+You can view or download the complete project documentation here:
+
+👉 [Download VidTrim.pdf](https://github.com/ChandraShekharSaini/ChandraShekharSaini/blob/main/VidTrim.pdf)
+
+
 
 # VidTrim ✂️ - Video Editing Made Simple
 
