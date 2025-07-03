@@ -47,19 +47,28 @@ A web-based video trimming tool built with the **MERN stack**, styled with **Tai
 ### 🏠 Home Page
 ![Homepage](https://github.com/ChandraShekharSaini/ChandraShekharSaini/blob/main/Home_Page.gif)
 
+> This screen serves as the landing page, showcasing key features and navigation options for the VidTrim application.
+
 ---
 
-### ✂️ Upload & Preview
+### ✂️ Upload Video Page
 
 ![Upload Video Page - Trimming Interface](https://github.com/ChandraShekharSaini/ChandraShekharSaini/blob/main/Compress-Video-Page.jpg)
 
+> This screen allows users to upload their videos for compression, providing an easy and efficient interface.
+
 ---
 
-### 🆕 Create Account
+### 🆕 Create Account Page
 ![Upload Preview](https://github.com/ChandraShekharSaini/ChandraShekharSaini/blob/main/Sign-up.jpg)
+
+> This screen allows new users to create an account by providing their basic information and credentials.
+
 
 ### 🔐 Sign In
 ![Upload Preview](https://github.com/ChandraShekharSaini/ChandraShekharSaini/blob/main/Sign-in.jpg)
+
+> This screen allows existing users to securely sign in and access their VidTrim dashboard.
 
 ---
 
