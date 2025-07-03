@@ -10,10 +10,6 @@
   <img src="./public/gitHubLogo.gif" alt="VidTrim Logo" width="120" />
 </p>
 
-# 🎥 VidTrim
-
-A web-based video trimming tool built with the **MERN stack**, styled with **Tailwind CSS**, and enhanced with **Material UI** components.
-
 
 # 🎥 VidTrim
 
