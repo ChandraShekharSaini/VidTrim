@@ -6,10 +6,6 @@
 [![Tailwind CSS](https://img.shields.io/badge/Style-Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
 [![Material UI](https://img.shields.io/badge/Components-Material_UI-0081CB?logo=mui&logoColor=white)](https://mui.com)
 
-<p align="center">
-  <img src="https://github.com/ChandraShekharSaini/VidTrim/blob/master/frontend/src/assets/gitHubLogo.gif" alt="VidTrim Logo" width="120" />
-</p>
-
 
 # 🎥 VidTrim
 
