@@ -59,3 +59,45 @@ cd server && npm install
 # Install frontend dependencies (including Material UI)
 cd ../client && npm install
 
+## 🔧 Environment Configuration
+
+### ⚙️ Backend Setup
+Create a `.env` file in the `/server` directory with:
+
+```env
+# ========================
+# 🗃️ Database Configuration
+# ========================
+MONGO_URI=mongodb://localhost:27017/vidtrim
+# For MongoDB Atlas: mongodb+srv://<username>:<password>@cluster.mongodb.net/vidtrim
+
+# ========================
+# 🔒 Authentication Setup
+# ========================
+# 🔑 JWT Configuration
+JWT_SECRET=your_strong_jwt_secret_here
+JWT_EXPIRES_IN=30d
+
+# 🔵 Google OAuth
+GOOGLE_CLIENT_ID=your_client_id.apps.googleusercontent.com
+GOOGLE_CLIENT_SECRET=your_google_secret_key
+GOOGLE_CALLBACK_URL=http://localhost:5000/api/auth/google/callback
+
+# 🐙 GitHub OAuth
+GITHUB_CLIENT_ID=your_github_client_id
+GITHUB_CLIENT_SECRET=your_github_secret_key
+GITHUB_CALLBACK_URL=http://localhost:5000/api/auth/github/callback
+
+# ========================
+# 📦 Cloudinary Setup
+# ========================
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
+
+# ========================
+# 🖥️ Server Configuration
+# ========================
+PORT=5000
+NODE_ENV=development
+FRONTEND_URL=http://localhost:3000
