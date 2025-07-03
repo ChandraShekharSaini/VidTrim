@@ -1,50 +1,36 @@
-# 🎬 VidTrim
+# VidTrim ✂️  
 
-A modern video trimming web application built with the **MERN** stack and styled using **Tailwind CSS**. Easily upload, preview, trim, and download videos with a sleek UI and seamless performance.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![MERN Stack](https://img.shields.io/badge/Stack-MERN-61DAFB?logo=react&logoColor=white)](https://www.mongodb.com/mern-stack)
+[![Tailwind CSS](https://img.shields.io/badge/Style-Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
 
----
+A web-based video trimming tool built with **MERN stack** (MongoDB, Express, React, Node.js) and styled with **Tailwind CSS**. Trim, cut, and export videos effortlessly in your browser.
 
-## 🚀 Tech Stack
-
-- **MongoDB** – NoSQL database for storing video metadata and user data
-- **Express.js** – Backend framework for building RESTful APIs
-- **React.js** – Frontend library for creating a dynamic UI
-- **Node.js** – Runtime environment for server-side logic
-- **Tailwind CSS** – Utility-first CSS framework for fast and responsive design
-
----
+![VidTrim Demo](https://via.placeholder.com/800x400?text=VidTrim+Demo+GIF) <!-- Replace with actual demo GIF -->
 
 ## ✨ Features
+- **Video Upload** (MP4, WebM, MOV)
+- **Precision Trimming** (millisecond accuracy)
+- **Preview Before Export**
+- **User Authentication** (JWT)
+- **Cloud Storage** (Cloudinary)
+- **Responsive Design**
 
-- 📁 Upload video files
-- ✂️ Trim videos with precise start and end controls
-- 📹 Preview before downloading
-- 💾 Download the trimmed clip
-- 🧠 Clean and intuitive UI
+## 🚀 Quick Start
 
----
+### Prerequisites
+- Node.js ≥16
+- MongoDB (Local or Atlas)
+- FFmpeg (for server-side processing)
 
-## 📸 Screenshots
-
-> *(Add screenshots here once available)*  
-> Example:  
-> ![Homepage](./screenshots/homepage.png)
-
----
-
-## ⚙️ Installation
-
+### Installation
 ```bash
-# Clone the repo
-git clone https://github.com/your-username/VidTrim.git
-cd VidTrim
+# Clone repository
+git clone https://github.com/yourusername/vidtrim.git
+cd vidtrim
 
-# Backend setup
-cd backend
-npm install
-npm run dev
+# Install backend dependencies
+cd server && npm install
 
-# Frontend setup
-cd ../frontend
-npm install
-npm start
+# Install frontend dependencies
+cd ../client && npm install
