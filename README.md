@@ -42,15 +42,17 @@
 
 ### 📋 Prerequisites
 
-Before running this project locally, ensure you have the following installed:
+Before you dive into **VidTrim**, make sure you have the following set up on your system:
 
-- [Node.js](https://nodejs.org/) ≥ 16
-- [MongoDB](https://www.mongodb.com/) (Local or Atlas)
-- [FFmpeg](https://ffmpeg.org/) – for server-side video processing
-- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/) – for dependency management
-- [Git](https://git-scm.com/) – to clone the repository
-- [Postman](https://www.postman.com/) – for testing APIs (optional but useful)
-- A modern browser (Chrome, Firefox, etc.)
+- ⚙️ [Node.js](https://nodejs.org/) (v16 or higher) – Backend JavaScript runtime
+- 🍃 [MongoDB](https://www.mongodb.com/) – NoSQL database (Local or Atlas)
+- 🎞️ [FFmpeg](https://ffmpeg.org/) – For trimming, encoding & processing videos server-side
+- 📦 [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/) – To manage project dependencies
+- 🧰 [Git](https://git-scm.com/) – Version control to clone & collaborate on the project
+- 📮 [Postman](https://www.postman.com/) – Optional, but handy for testing APIs
+- 🌐 A modern browser – Recommended: [Chrome](https://www.google.com/chrome/), [Firefox](https://www.mozilla.org/firefox/)
+
+> ✅ Once you’ve got these tools installed, you’re all set to run VidTrim locally!
 
 
 
