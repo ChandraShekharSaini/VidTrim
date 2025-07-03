@@ -44,24 +44,41 @@ A web-based video trimming tool built with the **MERN stack**, styled with **Tai
 
 ## 📸 Screenshots
 
-### 🏠 Homepage
+### 🏠 Home Page
 ![Homepage](https://github.com/ChandraShekharSaini/ChandraShekharSaini/blob/main/Home_Page.gif)
 
 ---
 
-### ✂️ Trimming Interface
-![Trimming Interface](https://github.com/ChandraShekharSaini/ChandraShekharSaini/blob/main/Compress-Video-Page.jpg)
+### ✂️ Upload & Preview
+
+![Upload Video Page - Trimming Interface](https://github.com/ChandraShekharSaini/ChandraShekharSaini/blob/main/Compress-Video-Page.jpg)
 
 ---
 
-### 📤 Upload & Preview
-![Upload Preview](https://github.com/ChandraShekharSaini/ChandraShekharSaini/blob/main/Profile.jpg)
+### 🆕 Create Account
+![Upload Preview](https://github.com/ChandraShekharSaini/ChandraShekharSaini/blob/main/Sign-up.jpg)
 
-### 📤 Upload & Preview
+### 🔐 Sign In
 ![Upload Preview](https://github.com/ChandraShekharSaini/ChandraShekharSaini/blob/main/Sign-in.jpg)
 
-### 📤 Upload & Preview
-![Upload Preview](https://github.com/ChandraShekharSaini/ChandraShekharSaini/blob/main/Sign-up.jpg)
+---
+
+### 🙍‍♂️ Profile Page
+
+![Profile Page](https://github.com/ChandraShekharSaini/ChandraShekharSaini/blob/main/Profile.jpg)
+
+> This screen displays the user's profile information, including account details and uploaded videos.
+
+---
+
+### 📞 Contact Page
+
+![Contact Page](https://github.com/ChandraShekharSaini/ChandraShekharSaini/blob/main/Contact.jpg)
+
+> This screen allows users to get in touch with the VidTrim team for support, feedback, or inquiries.
+
+
+
 
 ## 🚀 Quick Start
 
