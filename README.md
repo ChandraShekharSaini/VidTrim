@@ -9,7 +9,7 @@
 
 You can view or download the complete project documentation here:
 
-👉 [Download VidTrim.pdf](https://github.com/ChandraShekharSaini/ChandraShekharSaini/blob/main/VidTrim.pdf)
+👉 [Download VidTrim.pdf](https://drive.google.com/file/d/1CHzksjEwRcy9g2-vuh6FYMu236oTp9n_/view?usp=drive_link)
 
 
 
