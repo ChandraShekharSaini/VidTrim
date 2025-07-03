@@ -45,7 +45,7 @@ A web-based video trimming tool built with the **MERN stack**, styled with **Tai
 ## 📸 Screenshots
 
 ### 🏠 Homepage
-![Homepage](./assets/homepage.png)
+![Homepage](https://github.com/ChandraShekharSaini/ChandraShekharSaini/blob/main/Home_Page.gif)
 
 ---
 
