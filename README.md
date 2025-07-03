@@ -45,7 +45,7 @@
 - MongoDB (Local or Atlas)
 - FFmpeg (for server-side processing)
 - Google OAuth Client ID
-- GitHub OAuth Client ID
+- GitHub OAuth Secret Key
 
 ### ⚡ Installation
 ```bash
