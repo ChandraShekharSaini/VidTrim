@@ -50,14 +50,18 @@ A web-based video trimming tool built with the **MERN stack**, styled with **Tai
 ---
 
 ### ✂️ Trimming Interface
-![Trimming Interface](./assets/trimming-interface.png)
+![Trimming Interface](https://github.com/ChandraShekharSaini/ChandraShekharSaini/blob/main/Compress-Video-Page.jpg)
 
 ---
 
 ### 📤 Upload & Preview
-![Upload Preview](./assets/upload-preview.png)
+![Upload Preview](https://github.com/ChandraShekharSaini/ChandraShekharSaini/blob/main/Profile.jpg)
 
+### 📤 Upload & Preview
+![Upload Preview](https://github.com/ChandraShekharSaini/ChandraShekharSaini/blob/main/Sign-in.jpg)
 
+### 📤 Upload & Preview
+![Upload Preview](https://github.com/ChandraShekharSaini/ChandraShekharSaini/blob/main/Sign-up.jpg)
 
 ## 🚀 Quick Start
 
