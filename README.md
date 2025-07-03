@@ -59,21 +59,3 @@ cd server && npm install
 # Install frontend dependencies (including Material UI)
 cd ../client && npm install
 
-
-# Create environment file for backend
-cat > .env << 'EOF'
-# Database
-MONGO_URI=mongodb://localhost:27017/vidtrim
-
-# Authentication
-JWT_SECRET=your_jwt_secret_here
-GOOGLE_CLIENT_ID=your_google_client_id
-GOOGLE_CLIENT_SECRET=your_google_secret
-GITHUB_CLIENT_ID=your_github_client_id
-GITHUB_CLIENT_SECRET=your_github_secret
-
-# Cloud Storage
-CLOUDINARY_CLOUD_NAME=your_cloud_name
-CLOUDINARY_API_KEY=your_api_key
-CLOUDINARY_API_SECRET=your_api_secret
-EOF
