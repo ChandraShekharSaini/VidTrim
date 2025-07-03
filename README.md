@@ -7,8 +7,9 @@
 [![Material UI](https://img.shields.io/badge/Components-Material_UI-0081CB?logo=mui&logoColor=white)](https://mui.com)
 
 <p align="center">
-  <img src="./assets/logo.png" alt="VidTrim Logo" width="120" />
+  <img src="./public/gitHubLogo.gif" alt="VidTrim Logo" width="120" />
 </p>
+
 
 # 🎥 VidTrim
 
