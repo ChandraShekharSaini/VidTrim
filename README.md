@@ -1,5 +1,7 @@
 # VidTrim ✂️ - Video Editing Made Simple
 
+🔗 **Live Demo:** [https://your-live-link.com](https://your-live-link.com)
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![MERN Stack](https://img.shields.io/badge/Stack-MERN-61DAFB?logo=react&logoColor=white)](https://www.mongodb.com/mern-stack)
 [![Auth: Passport](https://img.shields.io/badge/Auth-Passport-34E27A?logo=passport&logoColor=white)](https://www.passportjs.org)
