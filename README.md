@@ -1,7 +1,10 @@
 # VidTrim ✂️ - Video Editing Made Simple
 
+---
+
 🔗 **Live Demo:** [https://frontend-five-gamma-26.vercel.app](https://frontend-five-gamma-26.vercel.app)
 
+---
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![MERN Stack](https://img.shields.io/badge/Stack-MERN-61DAFB?logo=react&logoColor=white)](https://www.mongodb.com/mern-stack)
