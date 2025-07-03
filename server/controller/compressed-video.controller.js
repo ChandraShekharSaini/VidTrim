@@ -1,7 +1,5 @@
 import CompressedVideo from "../models/compressed-video.model.js"
 
-
-
 export const getCompressedVideo = async (req, res) => {
 
     console.log(req.params.id)

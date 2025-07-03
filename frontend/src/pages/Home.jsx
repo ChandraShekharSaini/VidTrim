@@ -1,5 +1,5 @@
-import React from 'react'
-import { useNavigate, Link } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { useNavigate, Link, useLocation } from 'react-router-dom'
 import Navbar from '../components/Navbar';
 import LogoCarousel from '../components/LogoCarousel';
 import HomeCompo1 from '../components/HomeCompo1';
@@ -7,23 +7,52 @@ import HomeCompo2 from '../components/HomeCompo2';
 import HomeCompo3 from '../components/HomeCompo3';
 import HomeCompo4 from '../components/HomeCompo4';
 import Footer from '../components/Footer';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { signInStart, signInSuccess, signInFailure } from "../redux/userSlice"
+import { jwtDecode } from "jwt-decode";
+
+
 
 const Home = () => {
     const navigate = useNavigate();
+    const location = useLocation()
+    const dispatch = useDispatch()
     const { currentUser } = useSelector((state) => state.user)
 
- 
+
+    console.log(currentUser);
+    useEffect(() => {
+
+        const queryParams = new URLSearchParams(location.search)
+        const token = queryParams.get('token')
+          
+        if (token) {
+            try {
+                const parsedToken = JSON.parse(token)
+                const decoded = jwtDecode(parsedToken)
+                   
+                dispatch(signInSuccess(decoded.user))
+            } catch (error) {
+
+                navigate("/create-account/sign-in")
+
+            }
+        }
+
+
+
+    }, [location.search])
+
 
 
     return (
         <>
 
-            <section className='w-full min-h-screen pt-20 sm:pt-24 md:pt-28 lg:pt-32 bg-black flex items-center'>
+            <section className='w-full min-h-screen pt-20 z-20 sm:pt-24 md:pt-28 lg:pt-32 bg-black flex items-center'>
                 <Navbar />
                 <div className='w-[95%] mt-7 sm:mt-0 min-h-[600px] mx-auto flex flex-col items-center bg-[url("/gradient-hero-prerender.avif")] bg-cover bg-center bg-no-repeat rounded-lg p-4 sm:p-6 md:p-8 lg:p-10'>
                     <h1 className='text-4xl sm:text-5xl md:text-6xl lg:text-[110px] font-bold text-white text-center leading-tight'>
-                        The AI Video Compressor
+                        The  Video Compressor
                     </h1>
 
                     <div className='text-white text-base sm:text-lg md:text-xl lg:text-[20px] text-center mt-4 sm:mt-6'>
@@ -68,8 +97,8 @@ const Home = () => {
                                     <Link to='/create-account/sign-up' className='w-full sm:w-auto'>
                                         <div className='shadow-[0_0_0_0.5px_#ffffff] p-1 rounded-lg'>
                                             <button className='py-3 sm:py-4 px-3 sm:px-4 w-full bg-black text-white rounded-lg font-semibold font-mono text-sm sm:text-base'>
-                                                SIGN UP 
-                                            </button> 
+                                                SIGN UP
+                                            </button>
                                         </div>
                                     </Link>
                                 </>

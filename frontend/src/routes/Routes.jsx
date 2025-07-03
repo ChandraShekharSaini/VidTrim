@@ -14,6 +14,7 @@ const VideoUpload = lazy(() => import('../pages/VideoUploader'))
 const Dashbord = lazy(() => import('../pages/Dashbord'))
 const LoadingPage = lazy(() => import('../pages/LoadingPage'))
 const Code = lazy(() => import('../pages/Code'))
+const Contact = lazy(() => import('../pages/Contatct'))
 
 
 const App = () => {
@@ -22,7 +23,7 @@ const App = () => {
 
       <Suspense fallback={<FallbackLoading />}>
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={<Home/>} />
           <Route path='/download-video' element={<DownloadFile />} />
           <Route path='/video-upload' element={<VideoUpload />} />
           <Route path='/create-account/sign-up' element={<Signup />} />
@@ -32,6 +33,7 @@ const App = () => {
           <Route path='/loading' element={<LoadingPage />} />
           <Route path='/about' element={<About />} />
           <Route path='/code' element={<Code />} />
+          <Route path='/contact' element={<Contact />} />
 
           <Route path='*' element={<ErrorPage />} />
         </Routes>

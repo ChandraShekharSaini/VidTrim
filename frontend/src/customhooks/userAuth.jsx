@@ -1,17 +1,22 @@
-
 const userAuth = () => {
+  const GoogleAuthButton = () => {
+    window.location.href =
+      "https://vidtrim-backend-vercel.vercel.app/auth/google";
+  };
 
-    const GoogleAuthButton = () => {
-        window.location.href = 'https://vimtrim.onrender.com/auth/google'
-    }
+  const GithubAuthButton = () => {
+    window.location.href =
+      "https://vidtrim-backend-vercel.vercel.app/auth/github";
+  };
 
+  const InstagramAuthButton = () => {
+    window.location.href =
+      "https://vidtrim-backend-vercel.vercel.app/auth/instagram";
+  };
 
-    const GithubAuthButton = () => {
-        window.location.href = 'https://vimtrim.onrender.com/auth/github'
-    }
+  const name = 90;
 
+  return { GoogleAuthButton, GithubAuthButton, InstagramAuthButton };
+};
 
-    return { GoogleAuthButton, GithubAuthButton }
-}
-
-export default userAuth
+export default userAuth;

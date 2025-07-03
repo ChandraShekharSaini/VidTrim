@@ -14,8 +14,6 @@ const HomeCompo4 = () => {
 
 
 
-
-
         </section>
     )
 }
