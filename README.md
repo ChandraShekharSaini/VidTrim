@@ -42,6 +42,23 @@ A web-based video trimming tool built with the **MERN stack**, styled with **Tai
 - 🔐 **Passport.js** - Authentication middleware
 - ☁️ **Cloudinary** - For video storage
 
+## 📸 Screenshots
+
+### 🏠 Homepage
+![Homepage](./assets/homepage.png)
+
+---
+
+### ✂️ Trimming Interface
+![Trimming Interface](./assets/trimming-interface.png)
+
+---
+
+### 📤 Upload & Preview
+![Upload Preview](./assets/upload-preview.png)
+
+
+
 ## 🚀 Quick Start
 
 ### 📋 Prerequisites
