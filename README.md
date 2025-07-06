@@ -81,6 +81,13 @@ A web-based video trimming tool built with the **MERN stack**, styled with **Tai
 ![Upload Video Page - Trimming Interface](https://github.com/ChandraShekharSaini/ChandraShekharSaini/blob/main/Download%20Compressed%20Video%20(1)%20(2).gif)
 
 > This screen enables users to preview and download their compressed videos with ease and efficiency.
+---
+
+### ✂️ Compressed Video Dashbord
+
+![Upload Video Page - Trimming Interface](https://github.com/ChandraShekharSaini/ChandraShekharSaini/blob/main/Dashbord.gif)
+
+> This dashboard allows users to seamlessly preview, manage, and download their compressed videos with a smooth and efficient interface — ensuring a fast and user-friendly experience.
 
 ---
 
